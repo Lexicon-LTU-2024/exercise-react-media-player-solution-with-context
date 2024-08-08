@@ -14,7 +14,7 @@ export function AddMoviePage(): ReactElement {
   const { addMovie } = useMovieLogic();
   const navigate = useNavigate();
 
-  const handleOnsubmit: FormEventHandler<HTMLFormElement> = (e) => {
+  const handleOnSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
 
     const newMovie: IMovie = {
@@ -40,7 +40,7 @@ export function AddMoviePage(): ReactElement {
   };
 
   return (
-    <form className="add-movie" onSubmit={handleOnsubmit}>
+    <form className="add-movie" onSubmit={handleOnSubmit}>
       <Input label="title" onChange={(e) => setTitle(e.target.value)} type="text" value={title} />
 
       <Range
