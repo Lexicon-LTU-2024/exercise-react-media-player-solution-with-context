@@ -1,15 +1,14 @@
 import { ReactElement } from "react";
 import { MovieCard } from "../components";
-import { useOutletContext } from "react-router-dom";
-import { IMovieContext } from "../interfaces";
+import { useMovieLogic } from "../hooks";
 
 export function MovieListPage(): ReactElement {
-  const { handleOnMovieClick, movies } = useOutletContext<IMovieContext>();
+  const { movies } = useMovieLogic();
 
   return (
     <section className="movie-list">
       {movies.map((m) => (
-        <MovieCard key={m.title} onClick={handleOnMovieClick} movie={m} />
+        <MovieCard key={m.title} movie={m} />
       ))}
     </section>
   );

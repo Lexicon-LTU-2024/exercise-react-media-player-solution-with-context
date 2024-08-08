@@ -1,14 +1,16 @@
 import { ReactElement } from "react";
 import { IMovie } from "../interfaces";
+import { useMovieLogic } from "../hooks";
 
 interface IMovieCardProps {
   movie: IMovie;
-  onClick: (movie: IMovie) => void;
 }
 
-export function MovieCard({ movie, onClick }: IMovieCardProps): ReactElement {
+export function MovieCard({ movie }: IMovieCardProps): ReactElement {
+  const { handleOnMovieClick } = useMovieLogic();
+
   return (
-    <article className="movie-card" onClick={() => onClick(movie)}>
+    <article className="movie-card" onClick={() => handleOnMovieClick(movie)}>
       <div className="title-container">
         <p className="title">{movie.title}</p>
         <p className="rating">{movie.rating}/5</p>
