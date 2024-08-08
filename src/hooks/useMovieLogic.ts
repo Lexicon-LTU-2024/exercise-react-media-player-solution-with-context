@@ -1,6 +1,7 @@
-import { useOutletContext } from "react-router-dom";
 import { IMovieContext } from "../interfaces";
+import { useContext } from "react";
+import { MovieContext } from "../context/MovieProvider";
 
 export function useMovieLogic(): IMovieContext {
-  return useOutletContext<IMovieContext>();
+  return useContext(MovieContext);
 }
