@@ -2,7 +2,7 @@ import { FormEventHandler, ReactElement, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { options } from "../data";
-import { IMovie, IMovieContext } from "../interfaces";
+import { IMovie } from "../interfaces";
 import { Input, Select, Button, Range } from "../components";
 import { useMovieLogic } from "../hooks";
 

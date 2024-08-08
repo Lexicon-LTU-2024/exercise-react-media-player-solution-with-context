@@ -7,10 +7,10 @@ interface IMovieCardProps {
 }
 
 export function MovieCard({ movie }: IMovieCardProps): ReactElement {
-  const { handleOnMovieClick } = useMovieLogic();
+  const { removeMovie } = useMovieLogic();
 
   return (
-    <article className="movie-card" onClick={() => handleOnMovieClick(movie)}>
+    <article className="movie-card" onClick={() => removeMovie(movie)}>
       <div className="title-container">
         <p className="title">{movie.title}</p>
         <p className="rating">{movie.rating}/5</p>

@@ -7,7 +7,7 @@ export interface IMovie {
 
 export interface IMovieContext {
   addMovie: (movie: IMovie) => void;
-  handleOnMovieClick: (movie: IMovie) => void;
+  removeMovie: (movie: IMovie) => void;
   movies: IMovie[];
 }
 
